@@ -9,12 +9,17 @@ function App() {
   const [gpsValue, setGpsValue] = useState(0)
 
 
+
+
+  
+
+
   return (
     <div className="App">
 
       <div className="counter-btn">
         <Counter counterValue={counterValue} gpsValue={gpsValue}/>
-        <ButtonIncrement />   
+        <ButtonIncrement counterValue={counterValue} setCounterValue={setCounterValue} />   
       </div>
 
     </div>

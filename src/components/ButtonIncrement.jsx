@@ -1,9 +1,18 @@
 import React from 'react';
 
-const ButtonIncrement = () => {
+const ButtonIncrement = ({counterValue, setCounterValue}) => {
+
+
+
+
+    const handleIncrementClick = () => {
+        setCounterValue(counterValue +1)  
+      }
+
+
     return (
         <div>
-            <button>⛏️</button>
+            <button onClick={handleIncrementClick} >⛏️</button>
         </div>
     );
 };

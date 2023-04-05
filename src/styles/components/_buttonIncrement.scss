@@ -5,12 +5,13 @@ button {
     background: $colorButton;
     border: 1px $colorBorder;
     border-radius: $radius;
-    padding: 14px 34px;
+    padding: 12px 34px;
     box-shadow: $shadow;
     color: $colorText;
     font-size: $fontTextSize;
     margin-top: 20px;
     transition: 100ms;
+    width: 100%;
 
 
     &:active {
