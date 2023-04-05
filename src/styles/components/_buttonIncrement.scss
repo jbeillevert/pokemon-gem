@@ -1,15 +1,19 @@
 @import '../settings';
 
 
+div {
+    width: 100%;
+}
+
 button {
     background: $colorButton;
     border: 1px $colorBorder;
     border-radius: $radius;
-    padding: 12px 34px;
+    padding: 12px 0px;
     box-shadow: $shadow;
     color: $colorText;
     font-size: $fontTextSize;
-    margin-top: 20px;
+    margin-top: 10px;
     transition: 100ms;
     width: 100%;
 

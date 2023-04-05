@@ -29,7 +29,7 @@ $colorRed: #ED326A;
     src: url(/src/assets/fonts/Poppins-Light.ttf);
 }
 
-$fontTitleSize: 50px;
+$fontTitleSize: 35px;
 $fontSubTitleSize: 25px;
 $fontTextSize: 23px;
 
@@ -89,6 +89,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 300px;
 }
 
 
