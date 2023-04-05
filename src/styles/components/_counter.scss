@@ -1,0 +1,18 @@
+@import '../settings';
+
+
+
+
+.card {
+    padding: 15px 50px;
+    box-shadow: $shadow;
+    border-radius: $radius;
+    background-color: $colorCard;
+    border: $colorBorder 1px solid;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}

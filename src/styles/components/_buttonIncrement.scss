@@ -1,0 +1,20 @@
+@import '../settings';
+
+
+button {
+    background: $colorButton;
+    border: 1px $colorBorder;
+    border-radius: $radius;
+    padding: 14px 34px;
+    box-shadow: $shadow;
+    color: $colorText;
+    font-size: $fontTextSize;
+    margin-top: 20px;
+    transition: 100ms;
+
+
+    &:active {
+        background: $colorButtonActive;
+        transform: scale(0.95);
+    }
+}

@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import Counter from './components/Counter'
+import ButtonIncrement from './components/ButtonIncrement'
 
 
 function App() {
 
+  const [counterValue, setCounterValue] = useState(0)
+  const [gpsValue, setGpsValue] = useState(0)
+
 
   return (
     <div className="App">
-      <h1>blabla</h1>
-      <h2>Pokemon Gem</h2>
-      <h3>Bulbasaur</h3>
-      <p>Train this pokemon</p>
-      <button>⚒️</button>
-      
+
+      <div className="counter-btn">
+        <Counter counterValue={counterValue} gpsValue={gpsValue}/>
+        <ButtonIncrement />   
+      </div>
+
     </div>
   )
 }
