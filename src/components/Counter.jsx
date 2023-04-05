@@ -5,7 +5,7 @@ const Counter = ({counterValue, gpsValue}) => {
     return (
         <div className='card'>
             <h1>{counterValue} 💎</h1>
-            <p>{gpsValue}<br/> Gems per seconds</p>
+            <p>{gpsValue} Gems per seconds</p>
         </div>
     );
 };
