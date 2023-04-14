@@ -1,0 +1,51 @@
+@import '../settings';
+
+.poke-card {
+    height: fit-content;
+    box-shadow: $shadow;
+    border-radius: 0 4px 4px 0;
+    background-color: $colorCard;
+    border: $colorBorder 1px solid;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 10px;
+    margin-top: 10px;
+
+    .top-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        line-height: 1.2;
+    }
+
+    .bottom-card {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+    }
+
+
+    button {
+        width: fit-content;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .recolt {
+        width: fit-content;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 2px 10px;
+
+        background: #71A930;
+        border-radius: 4px;
+    }
+}
+ 

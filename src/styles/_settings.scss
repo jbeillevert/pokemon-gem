@@ -10,8 +10,8 @@ $colorBorder: #2A2E5E;
 $colorTitle: #D4DCFF;
 $colorText: #BEC8F1;
 $colorLevel: #bec8f130;
-$colorButton: #5396E7;
-$colorButtonActive: #78b1f7;
+$colorButton: #6253e7;
+$colorButtonActive: #8378f7;
 $colorButtonInvalid: #5396e730;
 $colorGreen: #31E89B;
 $colorRed: #ED326A;
@@ -91,6 +91,15 @@ body {
     flex-direction: column;
     width: 95%;
     max-width: 400px;
+}
+
+.side-menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 280px;
+    height: 100%;
+    z-index: 1;
 }
 
 
