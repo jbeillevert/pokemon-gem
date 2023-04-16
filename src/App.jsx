@@ -31,9 +31,7 @@ const pokedex = [
 
 
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen)
-  }
+
 
 
 
@@ -48,7 +46,6 @@ const pokedex = [
 
 
   
-      <img className='show-menu' onClick={toggleMenu} src={iconMenu} alt="icon-show-menu" />
   
 
       <div className='side-menu'>
