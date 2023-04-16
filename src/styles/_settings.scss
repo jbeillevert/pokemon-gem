@@ -126,8 +126,7 @@ img:not(.show-menu) {
     left: 0;
     top: 0;
     max-width: 280px;
-    height: 100%;
-    z-index: -1;
+    height: fit-content;
 }
 
 
