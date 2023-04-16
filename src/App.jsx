@@ -3,6 +3,7 @@ import Counter from './components/Counter'
 import ButtonIncrement from './components/ButtonIncrement'
 import Hero from './components/Hero'
 import Pokecard from './components/Pokecard'
+import iconMenu from '/assets/img/favicon/Favicon-pkgem.svg'
 
 
 function App() {
@@ -21,11 +22,20 @@ const pokedex = [
 
   const [counterValue, setCounterValue] = useState(0)
   const [gpsValue, setGpsValue] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false)
+
 
   const updateGpsValue = (gpsPoke) => {
     setGpsValue(gpsPoke)
-
   }
+
+
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+
 
 
   return (
@@ -35,6 +45,11 @@ const pokedex = [
         <Counter counterValue={counterValue} gpsValue={gpsValue} setCounterValue={setCounterValue}/>
         <ButtonIncrement counterValue={counterValue} setCounterValue={setCounterValue} />   
       </div>
+
+
+  
+      <img className='show-menu' onClick={toggleMenu} src={iconMenu} alt="icon-show-menu" />
+  
 
       <div className='side-menu'>
         <Hero />
