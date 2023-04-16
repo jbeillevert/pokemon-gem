@@ -75,6 +75,14 @@ body {
     min-height: 100vh;
 }
 
+img {
+    pointer-events: none;
+  }
+  
+  img:hover {
+    pointer-events: auto;
+  }
+
 .App {
     min-width: 100vw;
     min-height: 100vh;

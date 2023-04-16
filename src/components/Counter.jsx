@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Counter = ({counterValue, gpsValue}) => {
+const Counter = ({counterValue, gpsValue, setCounterValue}) => {
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCounterValue((prevCounterValue) => prevCounterValue + Math.round(gpsValue / 5))  
+        }, 200);
+        return () => clearInterval(interval)
+    })
+
 
     return (
         <div className='card'>

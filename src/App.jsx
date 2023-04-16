@@ -21,21 +21,24 @@ const pokedex = [
 
   const [counterValue, setCounterValue] = useState(0)
   const [gpsValue, setGpsValue] = useState(0)
-  
 
+  const updateGpsValue = (gpsPoke) => {
+    setGpsValue(gpsPoke)
+
+  }
 
 
   return (
     <div className="App">
 
       <div className="counter-btn">
-        <Counter counterValue={counterValue} gpsValue={gpsValue}/>
+        <Counter counterValue={counterValue} gpsValue={gpsValue} setCounterValue={setCounterValue}/>
         <ButtonIncrement counterValue={counterValue} setCounterValue={setCounterValue} />   
       </div>
 
       <div className='side-menu'>
         <Hero />
-        <Pokecard pokename={pokedex[0].name} pokeprice={pokedex[0].price} pricetx={pokedex[0].TXprice} pokeimg={pokedex[0].img} pokegps={pokedex[0].gps} gems={counterValue} setgem={setCounterValue} gpstx={pokedex[0].TXgps}  />
+        <Pokecard pokename={pokedex[0].name} pokeprice={pokedex[0].price} pricetx={pokedex[0].TXprice} pokeimg={pokedex[0].img} pokegps={pokedex[0].gps} gems={counterValue} setgem={setCounterValue} gpstx={pokedex[0].TXgps} updateGpsValue={updateGpsValue}  />
 
       </div>
 
