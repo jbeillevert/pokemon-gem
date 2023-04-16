@@ -11,10 +11,11 @@ const pokedex = [
   {
     name: "Bulbasaur",
     lvl: 1,
-    price: 1,
-    tx:1.3,
+    price: 30,
+    TXprice:1.3,
     img:'./assets/img/animated-pokemons/001.gif',
-    gps: 1,
+    gps: 0,
+    TXgps: 3,
   }
 ]
 
@@ -34,7 +35,7 @@ const pokedex = [
 
       <div className='side-menu'>
         <Hero />
-        <Pokecard pokename={pokedex[0].name} pokeprice={pokedex[0].price} poketx={pokedex[0].tx} pokeimg={pokedex[0].img} pokegps={pokedex[0].gps} gems={counterValue} setgem={setCounterValue} />
+        <Pokecard pokename={pokedex[0].name} pokeprice={pokedex[0].price} pricetx={pokedex[0].TXprice} pokeimg={pokedex[0].img} pokegps={pokedex[0].gps} gems={counterValue} setgem={setCounterValue} gpstx={pokedex[0].TXgps}  />
 
       </div>
 
