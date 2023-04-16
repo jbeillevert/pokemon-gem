@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import myImage from '../assets/img/animated-pokemons/001.gif'
 
-const Pokecard = ({pokename, pokeprice, poketx, pokeimg, pokegps, gems, setgem}) => {
+const Pokecard = ({pokename, pokeprice, poketx, pokeimg, pokegps, gems, setgem, updateGpsValue}) => {
 
     
     const [lvlPoke, setLvlPoke] = useState(1)
@@ -14,6 +14,7 @@ const Pokecard = ({pokename, pokeprice, poketx, pokeimg, pokegps, gems, setgem})
             setPricePoke(Math.floor(pricePoke * poketx))
             setGpsPoke(Math.floor(gpsPoke + poketx))
             setgem(gems - pricePoke)
+            updateGpsValue(gpsPoke)
         }
     }
 
@@ -28,7 +29,10 @@ const Pokecard = ({pokename, pokeprice, poketx, pokeimg, pokegps, gems, setgem})
                     <h3>{pokename}</h3>
                     <p>💎 {pricePoke}</p>
                 </div>
-                <h4 className='Pkm-lvl'>lvl {lvlPoke}</h4>
+                <div className='Pkm-lvl'>
+                    <h4>lvl</h4>
+                    <h4>{lvlPoke}</h4>
+                </div>
             </div>
             <div className='bottom-card'>
                 <button onClick={lvlUp} className='btn-train'>Train</button>
