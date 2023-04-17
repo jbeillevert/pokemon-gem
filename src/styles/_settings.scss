@@ -134,7 +134,7 @@ img:not(.icon-showmenu) {
     left: 0;
     top: 0;
     max-width: 300px;
-    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ;
 }
 
 
@@ -143,6 +143,10 @@ img:not(.icon-showmenu) {
     .side-menu {
         transform: translateX(-100%);
         visibility: hidden;
-    }    
+    }
+
+    
 }
+
+
 

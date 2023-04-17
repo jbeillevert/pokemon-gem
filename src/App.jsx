@@ -9,6 +9,7 @@ function App() {
 
 const pokedex = [
   {
+    id: 1,
     name: "Bulbasaur",
     lvl: 1,
     price: 30,
@@ -16,18 +17,55 @@ const pokedex = [
     img:'./assets/img/animated-pokemons/001.gif',
     gps: 0,
     TXgps: 3,
-  }
+  },
+  {
+    id: 4,
+    name: "Charmander",
+    lvl: 1,
+    price: 30,
+    TXprice:1.3,
+    img:'./assets/img/animated-pokemons/004.gif',
+    gps: 0,
+    TXgps: 3,
+  },
+  {
+    id: 7,
+    name: "Squirtle",
+    lvl: 1,
+    price: 30,
+    TXprice:1.3,
+    img:'./assets/img/animated-pokemons/007.gif',
+    gps: 0,
+    TXgps: 3,
+  },
 ]
 
   const [counterValue, setCounterValue] = useState(0)
   const [gpsValue, setGpsValue] = useState(0)
-  
+  const [pokeGpsValues, setPokeGpsValues] = useState({})
 
 
-  const updateGpsValue = (gpsPoke) => {
-    setGpsValue(gpsPoke)
-  }
 
+
+  const calculateGpsTotal = (pokeId, gpsPoke) => {
+    setPokeGpsValues((prevPokeGpsValues) => ({
+      ...prevPokeGpsValues,
+      [pokeId]: gpsPoke,
+    }));
+  };
+
+  useEffect(() => {
+    const totalGps = Object.values(pokeGpsValues).reduce((sum, gps) => sum + gps, 0);
+    setGpsValue(totalGps);
+  }, [pokeGpsValues]);
+
+ 
+
+
+
+
+
+  // Menu responsive
 
   const showMenuResponsive = () => {
     const menuu = document.querySelector('#sideMenu')
@@ -65,8 +103,23 @@ const pokedex = [
 
       <div className={"side-menu menu-visible"} id='sideMenu'>
         <Hero />
-        <Pokecard pokename={pokedex[0].name} pokeprice={pokedex[0].price} pricetx={pokedex[0].TXprice} pokeimg={pokedex[0].img} pokegps={pokedex[0].gps} gems={counterValue} setgem={setCounterValue} gpstx={pokedex[0].TXgps} updateGpsValue={updateGpsValue}  />
-
+        {
+          pokedex.map((pokemon, index) => (
+            <Pokecard 
+              key={index} 
+              id={pokemon.id}
+              pokename={pokemon.name} 
+              pokeprice={pokemon.price} 
+              pricetx={pokemon.TXprice} 
+              pokeimg={pokemon.img} 
+              pokegps={pokemon.gps} 
+              gems={counterValue} 
+              setgem={setCounterValue} 
+              gpstx={pokemon.TXgps} 
+              updateGpsValue={calculateGpsTotal}  
+            />
+          ))
+        }
       </div>
 
     </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import myImage from '../assets/img/animated-pokemons/001.gif'
 
-const Pokecard = ({pokename, pokeprice, pricetx, pokeimg, pokegps, gems, setgem, gpstx, updateGpsValue}) => {
+
+const Pokecard = ({ id, pokename, pokeprice, pricetx, pokeimg, pokegps, gems, setgem, gpstx, updateGpsValue}) => {
 
     
     const [lvlPoke, setLvlPoke] = useState(1)
@@ -9,21 +9,19 @@ const Pokecard = ({pokename, pokeprice, pricetx, pokeimg, pokegps, gems, setgem,
     const [gpsPoke, setGpsPoke] = useState(pokegps)
 
     const lvlUp = () => {
+        const newGems = Number(gems) - Number(pricePoke);
         if (gems >= pricePoke && lvlPoke < 100) {
             setLvlPoke(lvlPoke + 1)
             setPricePoke(Math.floor(pricePoke * pricetx))
             setGpsPoke(Math.floor(gpsPoke + gpstx))
-            setgem(gems - pricePoke)
+            setgem(newGems)
         }
     }
 
-    const handleGpsChange = (newGpsPoke) => {
-        updateGpsValue(newGpsPoke)
-    }
 
     useEffect(() => {
-        handleGpsChange(gpsPoke)
-    })
+        updateGpsValue(id, gpsPoke);
+    }, [id, gpsPoke]);
 
 
 
