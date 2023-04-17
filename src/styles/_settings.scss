@@ -75,11 +75,11 @@ body {
     min-height: 100vh;
 }
 
-img:not(.show-menu) {
+img:not(.icon-showmenu) {
     pointer-events: none;
   }
   
-  img:hover:not(.show-menu) {
+  img:hover:not(.icon-showmenu) {
     pointer-events: auto;
   }
 
@@ -101,7 +101,7 @@ img:not(.show-menu) {
     max-width: 400px;
 }
 
-.show-menu {
+.icon-showmenu {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -110,8 +110,6 @@ img:not(.show-menu) {
     top: 10px;
     left: 10px;
     cursor: pointer;
-    display: block;
-    object-fit: contain;
     transition: 300ms;
 
 
@@ -121,12 +119,30 @@ img:not(.show-menu) {
     }
 }
 
+
+.menu-visible {
+    transform: translateX(0%);
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 300px;
+}
+
 .side-menu {
     position: absolute;
     left: 0;
     top: 0;
-    max-width: 280px;
-    height: fit-content;
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
+
+
+@media screen and (max-width: 980px) {
+    .side-menu {
+        transform: translateX(-100%);
+        visibility: hidden;
+    }    
+}
 

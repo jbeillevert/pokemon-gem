@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Counter from './components/Counter'
 import ButtonIncrement from './components/ButtonIncrement'
 import Hero from './components/Hero'
 import Pokecard from './components/Pokecard'
-import iconMenu from '/assets/img/favicon/Favicon-pkgem.svg'
 
 
 function App() {
@@ -22,7 +21,7 @@ const pokedex = [
 
   const [counterValue, setCounterValue] = useState(0)
   const [gpsValue, setGpsValue] = useState(0)
-  const [menuOpen, setMenuOpen] = useState(false)
+  
 
 
   const updateGpsValue = (gpsPoke) => {
@@ -30,10 +29,26 @@ const pokedex = [
   }
 
 
+  const showMenuResponsive = () => {
+    const menuu = document.querySelector('#sideMenu')
+    menuu.classList.remove('side-menu')
+  }
 
+  useEffect(() => {
+    const hideMenuResponsive = (event) => {
+      const sideMenu = document.querySelector('#sideMenu')
+      if (sideMenu && !sideMenu.contains(event.target)) {
+        sideMenu.classList.add('side-menu')
+      }
+    }
 
+    document.addEventListener('mousedown', hideMenuResponsive)
 
-
+    return () => {
+      document.removeEventListener('mousedown', hideMenuResponsive)
+    }
+  }, [])
+  
 
 
   return (
@@ -45,10 +60,10 @@ const pokedex = [
       </div>
 
 
-  
-  
+      <img className='icon-showmenu' onClick={showMenuResponsive} src="./assets/img/favicon/Favicon-pkgem.svg" alt="" />
 
-      <div className='side-menu'>
+
+      <div className={"side-menu menu-visible"} id='sideMenu'>
         <Hero />
         <Pokecard pokename={pokedex[0].name} pokeprice={pokedex[0].price} pricetx={pokedex[0].TXprice} pokeimg={pokedex[0].img} pokegps={pokedex[0].gps} gems={counterValue} setgem={setCounterValue} gpstx={pokedex[0].TXgps} updateGpsValue={updateGpsValue}  />
 
