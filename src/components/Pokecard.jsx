@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-const Pokecard = ({ id, pokename, pokeprice, pricetx, pokeimg, pokegps, gems, setgem, gpstx, updateGpsValue}) => {
+const Pokecard = ({ id, pokename, pokeprice, pricetx, pokeimg, pokegps, gems, setgem, gpstx, updateGpsValue, lvlEvolution, evolute}) => {
 
     
     const [lvlPoke, setLvlPoke] = useState(1)
@@ -15,6 +15,9 @@ const Pokecard = ({ id, pokename, pokeprice, pricetx, pokeimg, pokegps, gems, se
             setPricePoke(Math.floor(pricePoke * pricetx))
             setGpsPoke(Math.floor(gpsPoke + gpstx))
             setgem(newGems)
+            if(lvlPoke + 1 === lvlEvolution) {
+                evolute(id)
+            }
         }
     }
 
